@@ -1,6 +1,6 @@
 # This is qt5.14.2 cross-compile package for HYY RK3566 RK3568 RK3588 device with Ubuntu OS
 
-This is the documentation for RK3566 RK3568 RK3588 14inch Tablet products, written by RSD Team of HYY Technology Co.,Ltd.
+This is the documentation for RK3566 RK3568 RK3588 10.1inch 10.6inch 14inch 15.6inch Tablet products, written by RSD Team of HYY Technology Co.,Ltd.
 
 # How we config qt5.14.2
 see config file [here](auto_config.sh)
