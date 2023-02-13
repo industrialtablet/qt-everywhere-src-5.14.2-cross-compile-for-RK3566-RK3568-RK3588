@@ -58,6 +58,59 @@ rsync -avz hyy@hyytarget:/lib sysroot
 rsync -avz hyy@hyytarget:/usr/include sysroot/usr
 rsync -avz hyy@hyytarget:/usr/lib sysroot/usr
 ``` 
+9. How we config qmake.conf
+```
+cd /media/admin_/RK3568SDK/shadow_build_qt_5.14.2/qtbase/mkspecs/
+mkdir linux-arm-som-rk3568
+cp linux-aarch64-gnu-g++/* linux-arm-som-rk3568/
+```
+Modefied qmake.conf
+```
+#
+# qmake configuration for building with aarch64-linux-gnu-g++
+#
+
+MAKEFILE_GENERATOR      = UNIX
+CONFIG                 += incremental
+QMAKE_INCREMENTAL_STYLE = sublib
+
+QT_QPA_DEFAULT_PLATFORM = linuxfb
+QMAKE_CFLAGS_RELEASE += -O2 -march=armv8-a -lts
+QMAKE_CXXFLAGS_RELEASE += -O2 -march=armv8-a -lts
+
+include(../common/linux.conf)
+include(../common/gcc-base-unix.conf)
+include(../common/g++-unix.conf)
+
+QMAKE_INCDIR_OPENGL_ES2 = /media/admin_/RK3568SDK/openGL/mesa-12.0.5/install/include
+QMAKE_LIBDIR_OPENGL_ES2 = /media/admin_/RK3568SDK/openGL/mesa-12.0.5/install/lib
+QMAKE_LIBS_OPENGL_ES2 = -lglapi -lGLESv2
+
+QMAKE_INCDIR = $$[QT_SYSROOT]/usr/include                             #指定sysroot头文件
+QMAKE_LIBDIR = $$[QT_SYSROOT]/usr/lib                                 #指定sysroot库文件
+QMAKE_LIBDIR += $$[QT_SYSROOT]/usr/lib/aarch64-linux-gnu              #指定sysroot库文件
+QMAKE_LIBDIR += $$[QT_SYSROOT]/lib                                    #指定sysroot库文件
+
+QMAKE_CXXFLAGS += -ludev -lffi -std=c++11                                 #链接选项
+QMAKE_LFLAGS += -Wl,-rpath-link,$$[QT_SYSROOT]/usr/lib                    #链接sysroot库文件
+QMAKE_LFLAGS += -Wl,-rpath-link $$[QT_SYSROOT]/usr/lib/aarch64-linux-gnu  #链接sysroot库文件
+QMAKE_LFLAGS += -Wl,-rpath-link $$[QT_SYSROOT]/lib                        #链接sysroot库文件
+
+
+
+# modifications to g++.conf
+QMAKE_CC                = aarch64-linux-gnu-gcc
+QMAKE_CXX               = aarch64-linux-gnu-g++
+QMAKE_LINK              = aarch64-linux-gnu-g++
+QMAKE_LINK_SHLIB        = aarch64-linux-gnu-g++
+
+# modifications to linux.conf
+QMAKE_AR                = aarch64-linux-gnu-ar cqs
+QMAKE_OBJCOPY           = aarch64-linux-gnu-objcopy
+QMAKE_NM                = aarch64-linux-gnu-nm -P
+QMAKE_STRIP             = aarch64-linux-gnu-strip
+load(qt_config)
+```
 
 # How Order
 Send your message to sales team: **<export8@we-signage.com>**
