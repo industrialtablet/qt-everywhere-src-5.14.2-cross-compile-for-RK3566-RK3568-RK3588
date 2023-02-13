@@ -142,6 +142,10 @@ QMAKE_STRIP             = aarch64-linux-gnu-strip
 load(qt_config)
 ```
 
+# How we config build support ALSA
+```
+sudo apt-get install libasound2-dev
+```
 # How Order
 Send your message to sales team: **<export8@we-signage.com>**
 
