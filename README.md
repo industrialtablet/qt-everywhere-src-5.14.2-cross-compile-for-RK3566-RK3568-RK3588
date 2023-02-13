@@ -23,16 +23,10 @@ sudo apt-get install libunwind-dev
 4. Check gstreamer installed
 ```
 pkg-config gstreamer-1.0 --cflags
-```
-will show as below:
-```
 -pthread -I/usr/include/gstreamer-1.0 -I/usr/include/aarch64-linux-gnu -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include
 ```
 ```
 pkg-config gstreamer-1.0 --libs
-```
-will show as below:
-```
 -lgstreamer-1.0 -lgobject-2.0 -lglib-2.0
 ``` 
 5. configure check gstreamer 1.0 will failed if have no libgstreamer-plugins-base1.0-dev
