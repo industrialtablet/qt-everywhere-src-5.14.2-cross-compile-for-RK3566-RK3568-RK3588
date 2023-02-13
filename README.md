@@ -35,7 +35,7 @@ sudo apt install libgstreamer-plugins-base1.0-dev
 ``` 
 7. Do config check as below:
 ``` 
-./configure -release -opensource -confirm-license -gstreamer 1.0  will show 
+./configure -release -opensource -confirm-license -gstreamer 1.0
 ``` 
 will show as below:
 ``` 
