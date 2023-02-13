@@ -1,6 +1,6 @@
 # This is qt5.14.2 cross-compile package for HYY RK3566 RK3568 RK3588 device with Ubuntu OS
 
-This is the documentation for RK3568 14inch Tablet products, written by RSD Team of HYY Technology Co.,Ltd.
+This is the documentation for RK3566 RK3568 RK3588 14inch Tablet products, written by RSD Team of HYY Technology Co.,Ltd.
 
 # How we config qt5.14.2
 see config file [here](auto_config.sh)
@@ -63,6 +63,10 @@ pkg-config gstreamer-1.0 --libs
 ``` 
 sudo apt install libgstreamer-plugins-base1.0-dev
 ``` 
+6. How we config build support ALSA
+```
+sudo apt-get install libasound2-dev
+```
 7. Do config check as below:
 ``` 
 ./configure -release -opensource -confirm-license -gstreamer 1.0
@@ -70,7 +74,7 @@ sudo apt install libgstreamer-plugins-base1.0-dev
 will show as below:
 ``` 
 Qt Multimedia:
-  ALSA ................................... no
+  ALSA ................................... yes
   GStreamer 1.0 .......................... yes
   GStreamer 0.10 ......................... no
   Video for Linux ........................ yes
@@ -142,10 +146,6 @@ QMAKE_STRIP             = aarch64-linux-gnu-strip
 load(qt_config)
 ```
 
-# How we config build support ALSA
-```
-sudo apt-get install libasound2-dev
-```
 # How Order
 Send your message to sales team: **<export8@we-signage.com>**
 
