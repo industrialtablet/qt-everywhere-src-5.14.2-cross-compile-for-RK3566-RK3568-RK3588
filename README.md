@@ -2,6 +2,8 @@
 
 This is the documentation for RK3568 14inch Tablet products, written by RSD Team of HYY Technology Co.,Ltd.
 
+# How we config qt5.14.2
+see config file [here](auto_config.sh)
 
 
 # How Order
