@@ -52,10 +52,12 @@ Qt Multimedia:
   Windows Media Foundation ............... no
 ``` 
 8. sync sysroot to Host for compile
+``` 
 mkdir sysroot sysroot/usr sysroot/opt
 rsync -avz hyy@hyytarget:/lib sysroot
 rsync -avz hyy@hyytarget:/usr/include sysroot/usr
 rsync -avz hyy@hyytarget:/usr/lib sysroot/usr
+``` 
 
 # How Order
 Send your message to sales team: **<export8@we-signage.com>**
