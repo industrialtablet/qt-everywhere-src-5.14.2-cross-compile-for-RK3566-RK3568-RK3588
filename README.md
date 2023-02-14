@@ -146,9 +146,8 @@ QMAKE_STRIP             = aarch64-linux-gnu-strip
 load(qt_config)
 ```
 
-# How Order
-Send your message to sales team: **<export8@we-signage.com>**
-
+# RK3588 mainboard info for this documentation
+- [RK3588 Mainboard (SBC) Documents](https://github.com/pengyixing/RK3588-Development-Board)
 # Contacts
 - Website: www.we-signage.com
 - https://we-signage.en.made-in-china.com/
