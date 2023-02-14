@@ -36,7 +36,7 @@ see config file [here](auto_config.sh)
 	-no-separate-debug-info \
 ```
 # How we config build support gstreamer 1.0
-1. install build tools on target board {[RK3588 Mainboard (SBC)](https://github.com/pengyixing/RK3588-Development-Board)}
+1. install build tools on target board [[RK3588 Mainboard (SBC)](https://github.com/pengyixing/RK3588-Development-Board)]
 ```
 sudo apt-get install g++-aarch64-linux-gnu on target board
 ```
@@ -45,12 +45,12 @@ sudo apt-get install g++-aarch64-linux-gnu on target board
 ```
 tar xvf qt-everywhere-src-5.14.2.tar.xz
 ```
-3. install gstreamer packages on target board
+3. install gstreamer packages on target board [[RK3588 Mainboard (SBC)](https://github.com/pengyixing/RK3588-Development-Board)]
 ```
 sudo apt-get install libgstreamer1.0-0 gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-libav gstreamer1.0-doc gstreamer1.0-tools
 sudo apt-get install libunwind-dev
 ```
-4. Check gstreamer installed
+4. Check gstreamer installed on target board [[RK3588 Mainboard (SBC)](https://github.com/pengyixing/RK3588-Development-Board)]
 ```
 pkg-config gstreamer-1.0 --cflags
 -pthread -I/usr/include/gstreamer-1.0 -I/usr/include/aarch64-linux-gnu -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include
@@ -59,7 +59,7 @@ pkg-config gstreamer-1.0 --cflags
 pkg-config gstreamer-1.0 --libs
 -lgstreamer-1.0 -lgobject-2.0 -lglib-2.0
 ``` 
-5. configure check gstreamer 1.0 will failed if have no libgstreamer-plugins-base1.0-dev
+5. gstreamer 1.0 will failed if have no libgstreamer-plugins-base1.0-dev when do configure check on target board [[RK3588 Mainboard (SBC)](https://github.com/pengyixing/RK3588-Development-Board)]
 ``` 
 sudo apt install libgstreamer-plugins-base1.0-dev
 ``` 
@@ -67,7 +67,7 @@ sudo apt install libgstreamer-plugins-base1.0-dev
 ```
 sudo apt-get install libasound2-dev
 ```
-7. Do config check as below:
+7. Do config check on target board [[RK3588 Mainboard (SBC)](https://github.com/pengyixing/RK3588-Development-Board)] as below:
 ``` 
 ./configure -release -opensource -confirm-license -gstreamer 1.0
 ``` 
@@ -85,14 +85,14 @@ Qt Multimedia:
   DirectShow ............................. no
   Windows Media Foundation ............... no
 ``` 
-8. sync sysroot to Host for compile
+8. Sync sysroot from target board [[RK3588 Mainboard (SBC)](https://github.com/pengyixing/RK3588-Development-Board)] to host for cross-compile
 ``` 
 mkdir sysroot sysroot/usr sysroot/opt
 rsync -avz hyy@hyytarget:/lib sysroot
 rsync -avz hyy@hyytarget:/usr/include sysroot/usr
 rsync -avz hyy@hyytarget:/usr/lib sysroot/usr
 ``` 
-9. How we config qmake.conf
+9. How we config on host qmake.conf
 ```
 cd /media/admin_/RK3568SDK/shadow_build_qt_5.14.2/qtbase/mkspecs/
 mkdir linux-arm-som-rk3568
