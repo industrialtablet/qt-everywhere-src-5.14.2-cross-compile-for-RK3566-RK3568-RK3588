@@ -92,7 +92,7 @@ rsync -avz hyy@hyytarget:/lib sysroot
 rsync -avz hyy@hyytarget:/usr/include sysroot/usr
 rsync -avz hyy@hyytarget:/usr/lib sysroot/usr
 ``` 
-9. How we config on host qmake.conf
+9. How we config qmake.conf on Host
 ```
 cd /media/admin_/RK3568SDK/shadow_build_qt_5.14.2/qtbase/mkspecs/
 mkdir linux-arm-som-rk3568
