@@ -36,7 +36,7 @@ see config file [here](auto_config.sh)
 	-no-separate-debug-info \
 ```
 # How we config build support gstreamer 1.0
-1. install build tools on target board
+1. install build tools on target board {[RK3588 Mainboard (SBC)](https://github.com/pengyixing/RK3588-Development-Board)}
 ```
 sudo apt-get install g++-aarch64-linux-gnu on target board
 ```
