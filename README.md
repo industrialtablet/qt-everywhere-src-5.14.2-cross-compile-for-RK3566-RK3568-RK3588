@@ -58,11 +58,11 @@ pkg-config gstreamer-1.0 --cflags
 ```
 pkg-config gstreamer-1.0 --libs
 -lgstreamer-1.0 -lgobject-2.0 -lglib-2.0
-``` 
+```
 5. gstreamer 1.0 will failed if have no libgstreamer-plugins-base1.0-dev when do configure check on target board [[RK3588 Mainboard (SBC)](https://github.com/pengyixing/RK3588-Development-Board)]
 ``` 
 sudo apt install libgstreamer-plugins-base1.0-dev
-``` 
+```
 6. How we config build support ALSA
 ```
 sudo apt-get install libasound2-dev
@@ -70,7 +70,7 @@ sudo apt-get install libasound2-dev
 7. Do config check on target board [[RK3588 Mainboard (SBC)](https://github.com/pengyixing/RK3588-Development-Board)] as below:
 ``` 
 ./configure -release -opensource -confirm-license -gstreamer 1.0
-``` 
+```
 will show as below:
 ``` 
 Qt Multimedia:
@@ -84,14 +84,14 @@ Qt Multimedia:
   Windows Audio Services ................. no
   DirectShow ............................. no
   Windows Media Foundation ............... no
-``` 
+```
 8. Sync sysroot from target board [[RK3588 Mainboard (SBC)](https://github.com/pengyixing/RK3588-Development-Board)] to host for cross-compile
 ``` 
 mkdir sysroot sysroot/usr sysroot/opt
 rsync -avz hyy@hyytarget:/lib sysroot
 rsync -avz hyy@hyytarget:/usr/include sysroot/usr
 rsync -avz hyy@hyytarget:/usr/lib sysroot/usr
-``` 
+```
 9. How we config qmake.conf on Host
 ```
 cd /media/admin_/RK3568SDK/shadow_build_qt_5.14.2/qtbase/mkspecs/
@@ -148,7 +148,35 @@ load(qt_config)
 
 # RK3588 mainboard info for this documentation
 - [RK3588 Mainboard (SBC) Documents](https://github.com/pengyixing/RK3588-Development-Board)
+
+
+
+## Get More technical Support
+
+###### RK3588 Development Board
+
+\- [RK3588 Development Board](https://github.com/industrialtablet/RK3588-Development-Board)
+
+###### ota upgrade tools(otaStar) and server
+
+\- [RK3566/RK3568/RK3588 Android OTA upgrade tools and server](https://github.com/tablet-pc/otastar)
+
+###### How Qt5.14.2 cross-compile
+
+\- [RK3588 Qt5.14.2 cross-compile for Ubuntu and Debian Linux OS](https://github.com/pengyixing/qt-everywhere-src-5.14.2-cross-compile-for-RK3566-RK3568-RK3588)
+
+Build Videorecorder Bundle use Networkoptix Client on HYY H-3588 Tablet
+
+\- [Build Videorecorder Bundle use Networkoptix Client](https://github.com/industrialtablet/Build-Videorecorder-Bundle-use-Networkoptix-Client-on-HYY-RK3566-Tablet)
+
+Build new ubuntu rootfs for HYY H-3588 Tablet
+
+-[Build new ubuntu rootfs for RK3566 RK3568 RK3588 products](https://github.com/industrialtablet/Re-build-ubuntu20.04-rootfs-for-RK3566-RK3568-RK3588)
+
+
+
 # Contacts
+
 - Website: www.we-signage.com
 - https://we-signage.en.made-in-china.com/
 - E-mail: dennis@we-signage.com
